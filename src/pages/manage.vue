@@ -22,6 +22,7 @@
   </div>
 </template>
 <script>
+  import addForm from '../components/addForm.vue'
   export default {
     data () {
       return {
@@ -45,13 +46,12 @@
         const h = this.$createElement
         this.$msgbox({
           title: '创建',
-          message: h('el-form', {props: {labelPosition: 'right'}}, [
-            h('el-form-item', {props: {label: 'asd', labelPosition: 'right'}}, [
-              h('el-input')
-            ])
-          ])
+          message: h('add-form')
         })
       }
+    },
+    components: {
+      addForm
     }
   }
 </script>
