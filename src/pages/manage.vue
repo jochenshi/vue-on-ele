@@ -42,11 +42,33 @@
         console.log(index)
         console.log(rows)
       },
+      openMethod () {
+        this.$refs.addforms.resetFields()
+      },
       openAdd () {
         const h = this.$createElement
+        let that = this
         this.$msgbox({
           title: '创建',
-          message: h('add-form')
+          message: h('add-form', {ref: 'myForm'}),
+          showCancelButton: true,
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          closeOnClickModal: false,
+          beforeClose: (action, instance, done) => {
+            if (action === 'confirm') {
+              console.log(instance)
+              // instance.confirmButtonLoading = true
+              console.log(that.$refs['myForm'].$refs['addforms'].model)
+            } else {
+              console.log('clicked cancel')
+              done()
+            }
+          }
+        })
+        console.log(this.$refs)
+        this.$nextTick(() => {
+          this.$refs.myForm.$refs.addforms.resetFields()
         })
       }
     },

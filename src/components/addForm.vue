@@ -1,5 +1,5 @@
 <template>
-  <el-form label-width="80px" ref="addforms">
+  <el-form label-width="80px" ref="addforms" v-bind:model="addforms">
     <el-form-item label="名称" prop="name" required>
       <el-input v-model="addforms.name"></el-input>
     </el-form-item>
@@ -24,15 +24,15 @@
           type: [],
           name: '',
           address: ''
-        },
-        type: ''
+        }
       }
     },
     methods: {
-
+      getInfo () {
+        console.log(this.addforms)
+      }
     },
     mounted () {
-      this.$refs['addforms'].resetFields()
     }
   }
 </script>
