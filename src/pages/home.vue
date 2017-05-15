@@ -2,9 +2,8 @@
   <div>
     <h2>This is home page</h2>
     <div class="product-content">
-      <span v-for="i in 2">{{'asdasd' + i}}</span>
       <el-row>
-        <el-col :span="8" v-for="o in 3">
+        <el-col :span="6" v-for="o in 4">
           <el-card>
             <img src="" alt="">
             <div>

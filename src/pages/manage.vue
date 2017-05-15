@@ -33,6 +33,13 @@
             province: 'jiangsu',
             district: 'nanjing',
             address: 'asdasd'
+          },
+          {
+            date: '2017-05-09',
+            name: 'test2',
+            province: 'jiangsu',
+            district: 'nanjing',
+            address: 'asdasd'
           }
         ]
       }
@@ -59,7 +66,13 @@
             if (action === 'confirm') {
               console.log(instance)
               // instance.confirmButtonLoading = true
-              console.log(that.$refs['myForm'].$refs['addforms'].model)
+              var flag = that.$refs['myForm'].submitValid()
+              if (!flag) {
+                return false
+              } else {
+                // handle submit functions
+                console.log(that.$refs['myForm'].$refs['addforms'].model, '111')
+              }
             } else {
               console.log('clicked cancel')
               done()

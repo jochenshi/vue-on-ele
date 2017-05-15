@@ -1,5 +1,5 @@
 <template>
-  <el-form label-width="80px" ref="addforms" v-bind:model="addforms">
+  <el-form label-width="80px" ref="addforms" v-bind:model="addforms" :rules="rules">
     <el-form-item label="名称" prop="name" required>
       <el-input v-model="addforms.name"></el-input>
     </el-form-item>
@@ -24,12 +24,35 @@
           type: [],
           name: '',
           address: ''
+        },
+        rules: {
+          name: [
+            {required: true, message: '请输入名称', trigger: 'blur'}
+          ],
+          address: [
+            {required: true, message: '请输入地址', trigger: 'blur'}
+          ],
+          type: [
+            {required: true, type: 'array', message: '请至少选择一个类型', trigger: 'change'}
+          ]
         }
       }
     },
     methods: {
       getInfo () {
         console.log(this.addforms)
+      },
+      submitValid () {
+        let flag
+        this.$refs['addforms'].validate((valid) => {
+          if (valid) {
+            flag = true
+          } else {
+            console.log('error submit')
+            flag = false
+          }
+        })
+        return flag
       }
     },
     mounted () {
