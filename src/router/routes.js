@@ -7,6 +7,7 @@ import Router from 'vue-router'
 import App from '../App.vue'
 import Home from '../pages/home.vue'
 import Manage from '../pages/manage.vue'
+import Personal from '../pages/personal.vue'
 
 Vue.use(Router)
 
@@ -27,6 +28,10 @@ export default new Router({
         {
           path: '/manage',
           component: Manage
+        },
+        {
+          path: '/personal',
+          component: Personal
         }
       ]
     }

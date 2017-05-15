@@ -3,7 +3,7 @@
     <h2>This is home page</h2>
     <div class="product-content">
       <el-row>
-        <el-col :span="6" v-for="o in 4">
+        <el-col :span="6" v-for="o in 100">
           <el-card>
             <img src="" alt="">
             <div>

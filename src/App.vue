@@ -13,6 +13,9 @@
       <router-link to="/manage">
         <el-menu-item index="3">管理</el-menu-item>
       </router-link>
+      <router-link to="/personal">
+        <el-menu-item index="4" class="personal-nav">个人</el-menu-item>
+      </router-link>
     </el-menu>
     <router-view></router-view>
   </div>
@@ -30,12 +33,20 @@
       },
       getSelected () {
         var a = window.location.hash.split('/')[1]
-        if (a === 'manage') {
-          console.log(a)
-          this.activeIndex = '3'
-        } else if (a === 'home') {
-          this.activeIndex = '1'
+        let hash
+        switch (a) {
+          case 'manage':
+            hash = '3'
+            break
+          case 'personal':
+            hash = '4'
+            break
+          case 'home':
+          default:
+            hash = '1'
+            break
         }
+        this.activeIndex = hash
       }
     },
     mounted () {
