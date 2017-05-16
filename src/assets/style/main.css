@@ -1,6 +1,12 @@
 html,body{
   height: 100%;
 }
-#app{
+#app,.app-content,.page-area{
   height: 100%;
+}
+.page-area{
+  overflow: auto;
+}
+#app{
+  overflow: hidden;
 }

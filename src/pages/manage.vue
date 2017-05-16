@@ -18,6 +18,14 @@
           </template>
         </el-table-column>
       </el-table>
+      <el-pagination
+        @current-change="handleCurrentChange"
+        @size-change="handleSizeChange"
+        :page-sizes="[10, 20, 30]"
+        :page-size="10"
+        :total="45"
+        layout="total, sizes, prev, pager, next, jumper">
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -32,7 +40,8 @@
             name: 'test1',
             province: 'jiangsu',
             district: 'nanjing',
-            address: 'asdasd'
+            address: 'asdasd',
+            remarks: 'this is test remark'
           },
           {
             date: '2017-05-09',
@@ -45,9 +54,13 @@
       }
     },
     methods: {
-      showRows (index, rows) {
+      // index指当前这条数据，table指整个表格的数据
+      showRows (index, table) {
         console.log(index)
-        console.log(rows)
+        console.log(table)
+        this.$msgbox({
+          title: '查看详细'
+        })
       },
       openMethod () {
         this.$refs.addforms.resetFields()
@@ -83,6 +96,13 @@
         this.$nextTick(() => {
           this.$refs.myForm.$refs.addforms.resetFields()
         })
+      },
+      // 改变当前页码的事件
+      handleCurrentChange (val) {
+        console.log(val)
+      },
+      handleSizeChange (val) {
+        console.log(val)
       }
     },
     components: {

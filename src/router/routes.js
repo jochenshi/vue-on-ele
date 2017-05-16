@@ -8,6 +8,7 @@ import App from '../App.vue'
 import Home from '../pages/home.vue'
 import Manage from '../pages/manage.vue'
 import Personal from '../pages/personal.vue'
+import Recent from '../pages/recent.vue'
 
 Vue.use(Router)
 
@@ -32,6 +33,10 @@ export default new Router({
         {
           path: '/personal',
           component: Personal
+        },
+        {
+          path: 'recent',
+          component: Recent
         }
       ]
     }

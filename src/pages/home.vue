@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-area">
     <h2>This is home page</h2>
     <div class="product-content">
       <el-row>
