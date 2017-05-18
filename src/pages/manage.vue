@@ -15,6 +15,7 @@
         <el-table-column label="操作">
           <template scope="scope">
             <el-button type="text" @click="showRows(scope, tableData)">查看</el-button>
+            <el-button type="text" @click="deleteRows(scope, tableData)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -31,6 +32,7 @@
 </template>
 <script>
   import addForm from '../components/addForm.vue'
+  import detailForm from '../components/detailForm.vue'
   export default {
     data () {
       return {
@@ -56,10 +58,11 @@
     methods: {
       // index指当前这条数据，table指整个表格的数据
       showRows (index, table) {
-        console.log(index)
-        console.log(table)
+        const h = this.$createElement
         this.$msgbox({
-          title: '查看详细'
+          title: '查看详细',
+          message: h('detail-form', {props: {formData: index.row}}),
+          closeOnClickModal: false
         })
       },
       openMethod () {
@@ -103,10 +106,12 @@
       },
       handleSizeChange (val) {
         console.log(val)
-      }
+      },
+      deleteRows () {}
     },
     components: {
-      addForm
+      addForm,
+      detailForm
     }
   }
 </script>
