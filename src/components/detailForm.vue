@@ -14,7 +14,8 @@
     props: ['formData'],
     computed: {
       handledData () {
-        let temp = this.formData, resData = []
+        let temp = this.formData
+        let resData = []
         resData.push({title: '名称', text: temp.name})
         resData.push({title: '省份', text: temp.province})
         resData.push({title: '市区', text: temp.district})

@@ -10,7 +10,7 @@
               <span>card{{o}}</span>
               <div class="button-area">
                 <span class="time"></span>
-                <el-button class="button" type="text">操作按钮</el-button>
+                <el-button class="button" type="text" @click="clickCard(o)">操作按钮</el-button>
               </div>
             </div>
           </el-card>
@@ -23,6 +23,11 @@
   export default {
     data () {
       return {}
+    },
+    methods: {
+      clickCard (index) {
+        console.log('you clicked card', index)
+      }
     }
   }
 </script>
