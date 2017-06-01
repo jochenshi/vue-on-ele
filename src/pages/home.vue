@@ -7,7 +7,7 @@
           <el-card>
             <img src="" alt="">
             <div>
-              <span>card{{o}}</span>
+              <span>card{{o}} 10.18号新街口春饼店开业需要歌手</span>
               <div class="button-area">
                 <span class="time"></span>
                 <el-button class="button" type="text" @click="clickCard(o)">操作按钮</el-button>
