@@ -9,6 +9,7 @@ import Home from '../pages/home.vue'
 import Manage from '../pages/manage.vue'
 import Personal from '../pages/personal.vue'
 import Recent from '../pages/recent.vue'
+import ActivityDetail from '../pages/detailActivity.vue'
 
 Vue.use(Router)
 
@@ -37,6 +38,10 @@ export default new Router({
         {
           path: 'recent',
           component: Recent
+        },
+        {
+          path: '/detailActivity/:id',
+          component: ActivityDetail
         }
       ]
     }

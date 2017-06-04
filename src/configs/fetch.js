@@ -32,14 +32,14 @@ export default (type = 'GET', url = '', data = {}) => {
   let promise = new Promise((resolve, reject) => {
     requestObj.open(type, url, true)
     requestObj.send(sendData)
-    requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    // requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     requestObj.onreadystatechange = () => {
       if (requestObj.readyState === 4) {
         if (requestObj.status === 200) {
           let obj = requestObj.response
           if (typeof obj !== 'object') {
             obj = JSON.parse(obj)
-            console.log(obj)
+            console.log('This is from fetch', obj)
           }
           resolve(obj)
         } else {

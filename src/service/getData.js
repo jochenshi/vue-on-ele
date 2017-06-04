@@ -5,4 +5,8 @@ import fetch from '../configs/fetch'
 
 var getProduct = () => fetch('GET', '', {})
 
-export {getProduct}
+var getUser = () => fetch('GET', '/v1/user/', {})
+
+var getActivity = () => fetch('GET', 'v1/activity/', {})
+
+export {getProduct, getUser, getActivity}
