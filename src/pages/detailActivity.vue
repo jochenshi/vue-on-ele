@@ -1,15 +1,31 @@
 <template>
-  <div>
-    <div>Detail page</div>
-    <div>{{$route.params.id}}</div>
+  <div class="post">
+    <div v-if="loading">loading</div>
+    <div v-if="">{{$route.params.id}}</div>
+    <div v-if="datas.length > 0">
+      <span>请求数据成功</span>
+    </div>
+    <div v-else-if="datas.length === 0">暂无数据</div>
+    <div v-if="error">请求失败，请重试</div>
   </div>
 </template>
 <script>
   export default {
     data () {
-      return {}
+      return {
+        loading: false,
+        error: null,
+        datas: [],
+        empty_data: false
+      }
+    },
+    created () {
+      this.getData()
     },
     mounted () {
+    },
+    methods: {
+      getData () {}
     }
   }
 </script>

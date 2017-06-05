@@ -13,7 +13,7 @@
               <div>发起人：{{o.sponsor}}</div>
               <div class="button-area">
                 <span class="time">{{o.launch_date}}</span>
-                <el-button class="button" type="text" @click="clickCard(o)">操作按钮</el-button>
+                <el-button class="button" type="text" @click="clickCard(o)">查看详细</el-button>
               </div>
             </div>
           </el-card>
