@@ -1,38 +1,46 @@
 <template>
-  <div>
-    <h2>This is manage page</h2>
-    <div class="manage-operate">
-      <el-button @click="openAdd">添加</el-button>
+  <div class="manage-wrapper">
+    <div>
+      <el-menu>
+        <el-submenu>
+          <template slot="title">我发布的任务</template>
+        </el-submenu>
+      </el-menu>
     </div>
-    <div class="manage-table">
-      <el-table :data="tableData" border>
-        <el-table-column type="selection"></el-table-column>
-        <el-table-column label="日期" prop="date"></el-table-column>
-        <el-table-column label="名称" prop="name"></el-table-column>
-        <el-table-column label="省份" prop="province"></el-table-column>
-        <el-table-column label="市区" prop="district"></el-table-column>
-        <el-table-column label="地址" prop="address"></el-table-column>
-        <el-table-column label="操作">
-          <template scope="scope">
-            <el-button type="text" @click="showRows(scope, tableData)">查看</el-button>
-            <el-button type="text" @click="deleteRows(scope, tableData)">删除</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-      <el-pagination
-        @current-change="handleCurrentChange"
-        @size-change="handleSizeChange"
-        :page-sizes="[10, 20, 30]"
-        :page-size="10"
-        :total="45"
-        layout="total, sizes, prev, pager, next, jumper">
-      </el-pagination>
+    <div class="manage-content">
+      <div class="manage-operate">
+        <el-button @click="openAdd">添加</el-button>
+      </div>
+      <div class="manage-table">
+        <el-table :data="tableData" border>
+          <el-table-column type="selection"></el-table-column>
+          <el-table-column label="日期" prop="date"></el-table-column>
+          <el-table-column label="名称" prop="name"></el-table-column>
+          <el-table-column label="省份" prop="province"></el-table-column>
+          <el-table-column label="市区" prop="district"></el-table-column>
+          <el-table-column label="地址" prop="address"></el-table-column>
+          <el-table-column label="操作">
+            <template scope="scope">
+              <el-button type="text" @click="showRows(scope, tableData)">查看</el-button>
+              <el-button type="text" @click="deleteRows(scope, tableData)">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-pagination
+          @current-change="handleCurrentChange"
+          @size-change="handleSizeChange"
+          :page-sizes="[10, 20, 30]"
+          :page-size="10"
+          :total="45"
+          layout="total, sizes, prev, pager, next, jumper">
+        </el-pagination>
+      </div>
     </div>
   </div>
 </template>
 <script>
-  import addForm from '../components/addForm.vue'
-  import detailForm from '../components/detailForm.vue'
+  import addForm from '../../components/addForm.vue'
+  import detailForm from '../../components/detailForm.vue'
   export default {
     data () {
       return {
@@ -72,12 +80,13 @@
         const h = this.$createElement
         let that = this
         this.$msgbox({
-          title: '创建',
+          title: '创建活动',
           message: h('add-form', {ref: 'myForm'}),
           showCancelButton: true,
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           closeOnClickModal: false,
+          customClass: 'add_dialog',
           beforeClose: (action, instance, done) => {
             if (action === 'confirm') {
               console.log(instance)
@@ -115,8 +124,22 @@
     }
   }
 </script>
-<style scoped>
+<style>
   .manage-table{
     padding: 20px;
+  }
+  .el-message-box.add_dialog{
+    width: 539px;
+
+  }
+  .add_dialog .el-message-box__content{
+    overflow-y: auto;
+    max-height: 400px;
+  }
+  .manage-wrapper{
+    display: -webkit-box;
+  }
+  .manage-content{
+    display: inline-block;
   }
 </style>

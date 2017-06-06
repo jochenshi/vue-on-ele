@@ -6,7 +6,7 @@ import Router from 'vue-router'
 
 import App from '../App.vue'
 import Home from '../pages/home.vue'
-import Manage from '../pages/manage.vue'
+import Manage from '../pages/manage/manage.vue'
 import Personal from '../pages/personal.vue'
 import Recent from '../pages/recent.vue'
 import ActivityDetail from '../pages/detailActivity.vue'
