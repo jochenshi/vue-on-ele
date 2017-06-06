@@ -1,6 +1,6 @@
 <template>
   <div class="manage-wrapper">
-    <div>
+    <div class="manage-nav">
       <el-menu>
         <el-submenu>
           <template slot="title">我发布的任务</template>
@@ -13,12 +13,13 @@
       </div>
       <div class="manage-table">
         <el-table :data="tableData" border>
-          <el-table-column type="selection"></el-table-column>
-          <el-table-column label="日期" prop="date"></el-table-column>
-          <el-table-column label="名称" prop="name"></el-table-column>
-          <el-table-column label="省份" prop="province"></el-table-column>
-          <el-table-column label="市区" prop="district"></el-table-column>
-          <el-table-column label="地址" prop="address"></el-table-column>
+          <!--<el-table-column type="selection"></el-table-column>-->
+          <el-table-column label="ID" prop="id"></el-table-column>
+          <el-table-column label="发布日期" prop="launch_date"></el-table-column>
+          <el-table-column label="活动名称" prop="name"></el-table-column>
+          <el-table-column label="活动地址" prop="province"></el-table-column>
+          <el-table-column label="活动时间" prop="activity_time"></el-table-column>
+          <el-table-column label="所需职业" prop="jobs"></el-table-column>
           <el-table-column label="操作">
             <template scope="scope">
               <el-button type="text" @click="showRows(scope, tableData)">查看</el-button>
@@ -140,6 +141,9 @@
     display: -webkit-box;
   }
   .manage-content{
-    display: inline-block;
+    -webkit-box-flex: 1;
+  }
+  .manage-nav{
+    width: 200px;
   }
 </style>
