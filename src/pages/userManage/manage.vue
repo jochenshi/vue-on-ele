@@ -19,11 +19,5 @@
     }
   }
 </script>
-<style>
-  .manage-wrapper{
-    display: -webkit-box;
-  }
-  .manage-nav{
-    width: 200px;
-  }
+<style lang="stylus" src="./userManage.styl">
 </style>
