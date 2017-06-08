@@ -1,6 +1,6 @@
 <template>
   <div>
-    <apply-info v-for="o in 2">{{o}}</apply-info>
+    <apply-info v-for="o in 6">{{o}}</apply-info>
   </div>
 </template>
 <script>

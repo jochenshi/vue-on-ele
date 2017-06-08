@@ -5,6 +5,17 @@
         <el-menu-item index="applying">我的报名</el-menu-item>
         <el-menu-item index="going">正在出活</el-menu-item>
         <el-menu-item index="finished">已完成出活</el-menu-item>
+        <el-menu-item index="personalInfo">个人信息</el-menu-item>
+        <el-menu-item index="myMessage">我的消息</el-menu-item>
+        <el-menu-item index="myFocus">我的关注</el-menu-item>
+        <!--<el-submenu index="">
+          <template slot="title">我的评价</template>
+          <el-menu-item index="receivedJudge">我收到的评价</el-menu-item>
+          <el-menu-item index="givingJudge">我给出的评价</el-menu-item>
+        </el-submenu>-->
+        <el-menu-item index="receivedJudge">我收到的评价</el-menu-item>
+        <el-menu-item index="givingJudge">我给出的评价</el-menu-item>
+        <el-menu-item index="mySetting">我的设置</el-menu-item>
       </el-menu>
     </div>
     <div class="manage-content">
