@@ -8,12 +8,16 @@ import 'element-ui/lib/theme-default/index.css'
 // import 'iview/dist/styles/iview.css'
 import store from './store'
 
+import App from './App.vue'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 // Vue.use(iView)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  template: '<App/>',
+  components: {App},
   router,
   store
 })

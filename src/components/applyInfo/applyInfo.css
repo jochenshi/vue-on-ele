@@ -7,3 +7,15 @@
 .apply-card li {
   list-style: none;
 }
+.apply-card .apply-detail {
+  display: -webkit-box;
+}
+.apply-card .apply-detail div:first-child {
+  -webkit-box-flex: 1;
+}
+.apply-card .apply-detail .apply-price {
+  padding-right: 30px;
+}
+.apply-card .apply-step {
+  margin: 10px 40px 0 40px;
+}

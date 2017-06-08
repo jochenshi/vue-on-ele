@@ -4,7 +4,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import App from '../App.vue'
+// import App from '../App.vue'
 import Home from '../pages/home.vue'
 import Manage from '../pages/userManage/manage.vue'
 import Personal from '../pages/personal.vue'
@@ -16,7 +16,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
+    /* {
       path: '/',
       component: App,
       children: [
@@ -55,6 +55,40 @@ export default new Router({
           component: ActivityDetail
         }
       ]
+    } */
+    {
+      path: '',
+      redirect: 'home'
+    },
+    {
+      path: '/home',
+      component: Home
+    },
+    {
+      path: '/manage',
+      component: Manage,
+      children: [
+        {
+          path: '',
+          redirect: 'applying'
+        },
+        {
+          path: 'applying',
+          component: MyApply
+        }
+      ]
+    },
+    {
+      path: '/personal',
+      component: Personal
+    },
+    {
+      path: 'recent',
+      component: Recent
+    },
+    {
+      path: '/detailActivity/:id',
+      component: ActivityDetail
     }
   ]
 })
