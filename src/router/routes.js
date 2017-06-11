@@ -78,7 +78,7 @@ export default new Router({
       children: [
         {
           path: '',
-          redirect: 'applying'
+          redirect: 'personalInfo'
         },
         {
           path: 'applying',

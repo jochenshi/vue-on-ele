@@ -1,11 +1,11 @@
 <template>
   <div class="manage-wrapper">
     <div class="manage-nav">
-      <el-menu :router="true">
+      <el-menu :router="true" :defaultActive="currentIndex">
+        <el-menu-item index="personalInfo">个人资料</el-menu-item>
         <el-menu-item index="applying">我的报名</el-menu-item>
         <el-menu-item index="going">正在出活</el-menu-item>
         <el-menu-item index="finished">已完成出活</el-menu-item>
-        <el-menu-item index="personalInfo">个人信息</el-menu-item>
         <el-menu-item index="myMessage">我的消息</el-menu-item>
         <el-menu-item index="myFocus">我的关注</el-menu-item>
         <!--<el-submenu index="">
@@ -26,7 +26,18 @@
 <script>
   export default {
     data () {
-      return {}
+      return {
+        currentIndex: 'personalInfo'
+      }
+    },
+    methods: {
+      getCurrentPage () {
+      }
+    },
+    mounted () {
+      var pa = this.$route.path.split('/')
+      this.currentIndex = pa[pa.length - 1]
+      console.log(this.currentIndex)
     }
   }
 </script>

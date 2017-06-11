@@ -1,9 +1,9 @@
 <template>
   <div class="apply-card">
-    <ul>
+    <ul class="apply-ul">
       <li>
-        <span>活动名称</span>
-        <span>活动发布时间</span>
+        <span class="activity-name" title="10.18号，新街口春饼店开业，需要鼓手歌手各3名。">10.18号，新街口春饼店开业，需要鼓手歌手各3名。</span>
+        <span class="activity-release-time">8小时前</span>
       </li>
       <li>
         <span>活动持续时间</span>
