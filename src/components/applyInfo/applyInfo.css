@@ -4,6 +4,21 @@
   box-sizing: border-box;
   display: inline-block;
 }
+.apply-card .apply-ul {
+  padding: 0 10px 10px 20px;
+}
+.apply-card .apply-ul .activity-name {
+  display: inline-block;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.apply-card .apply-ul .activity-release-time {
+  vertical-align: top;
+  float: right;
+}
 .apply-card li {
   list-style: none;
 }

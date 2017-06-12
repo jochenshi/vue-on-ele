@@ -10,7 +10,7 @@
           <el-menu-item index="2-3">导航3</el-menu-item>
         </el-submenu>
         <el-menu-item index="/manage">个人中心</el-menu-item>
-        <el-menu-item index="/detail">详情模板</el-menu-item>
+        <el-menu-item index="/detailActivity/2">详情模板</el-menu-item>
         <el-menu-item index="/personal" class="personal-nav">个人</el-menu-item>
       </el-menu>
     </div>

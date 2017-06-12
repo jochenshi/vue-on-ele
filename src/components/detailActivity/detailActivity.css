@@ -1,0 +1,8 @@
+.activity-detail-content {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.activity-detail-content .title-content .title {
+  text-align: center;
+}
