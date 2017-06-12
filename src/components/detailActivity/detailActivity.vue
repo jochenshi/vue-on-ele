@@ -2,7 +2,7 @@
   <div class="activity-detail-content">
     <div class="title-content">
       <dl class="title">活动标题</dl>
-      <div>
+      <div class="company">
         <span>xxx有限公司</span>
         <span>已认证</span>
       </div>
