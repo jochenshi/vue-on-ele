@@ -18,9 +18,10 @@
   margin-left: 10px;
 }
 .activity-detail-content .jobs-content .job-ul li span:first-child {
-  color: #f00;
-  width: 100px;
+  width: 64px;
   display: inline-block;
+  text-align-last: justify;
+  padding-right: 9px;
 }
 .activity-detail-content .fa {
   width: 16px;
