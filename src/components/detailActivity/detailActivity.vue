@@ -8,36 +8,36 @@
       </div>
     </div>
     <div class="body-content add-margin">
-      <dl>
-        <dt>
+      <ul>
+        <li>
           <i class="fa fa-calendar-check-o"></i>
-          <span>活动日期</span>
+          <span class="label">活动日期</span>
           <span>2017.01.01-2017.01.02</span>
-        </dt>
-        <dt>
+        </li>
+        <li>
           <i class="fa fa-clock-o"></i>
-          <span>集合时间</span>
+          <span class="label">集合时间</span>
           <span>2017.01.01</span>
-        </dt>
-        <dt>
+        </li>
+        <li>
           <i class="fa fa-map-marker"></i>
-          <span>集合地点</span>
+          <span class="label">集合地点</span>
           <span>新街口德基广场一楼</span>
-        </dt>
-        <dt>
+        </li>
+        <li>
           <i class="fa fa-flag"></i>
-          <span>活动详情</span>
-          <div>活动的详细内容以及相关的要求</div>
-        </dt>
-      </dl>
+          <span class="label">活动详情</span>
+          <div>活动详情的内容</div>
+        </li>
+      </ul>
     </div>
     <div class="contact-content add-margin">
       <i class="fa fa-phone"></i>
       <span>联系方式</span>
     </div>
-    <div class="jobs-content add-margin">
+    <div class="jobs-content add-margin" v-for="o in 3">
         <i class="fa fa-pencil-square-o"></i>
-        <span>职位1</span>
+        <span>职位{{o}}</span>
         <ul class="job-ul">
           <li>
             <span>职业类型</span>
