@@ -8,15 +8,15 @@
       </div>
       <dl>
         <dt>
-          <span>活动日期</span>
+          <span><i class="fa fa-calendar-check-o"></i>活动日期</span>
           <span>2017.01.01-2017.01.02</span>
         </dt>
         <dt>
-          <span>集合时间</span>
+          <span><i class="fa fa-clock-o"></i>集合时间</span>
           <span>2017.01.01</span>
         </dt>
         <dt>
-          <span>集合地点</span>
+          <span><i class="fa fa-map-marker"></i>集合地点</span>
           <span>新街口德基广场一楼</span>
         </dt>
         <dt>
