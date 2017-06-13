@@ -5,13 +5,24 @@
   border: 1px solid #e3e3e3;
   padding: 10px;
 }
+.activity-detail-content li {
+  list-style: none;
+}
 .activity-detail-content .title-content .title {
   text-align: center;
 }
 .activity-detail-content .title-content .company {
   text-align: center;
 }
-.activity-detail-content .title-content .fa {
+.activity-detail-content .add-margin {
+  margin-left: 10px;
+}
+.activity-detail-content .jobs-content .job-ul li span:first-child {
+  color: #f00;
+  width: 100px;
+  display: inline-block;
+}
+.activity-detail-content .fa {
   width: 16px;
   text-align: center;
 }
