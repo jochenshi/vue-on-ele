@@ -36,8 +36,11 @@
       <span>联系方式</span>
     </div>
     <div class="jobs-content add-margin" v-for="o in 3">
-        <i class="fa fa-pencil-square-o"></i>
-        <span>职位{{o}}</span>
+        <div>
+          <i class="fa fa-pencil-square-o"></i>
+          <span>职位{{o}}</span>
+          <i class="fa fa-caret-down"></i>
+        </div>
         <ul class="job-ul">
           <li>
             <span>职业类型</span>
@@ -65,6 +68,7 @@
             <span>要求民族唱法</span>
           </li>
         </ul>
+        <el-button class="apply-btn">报名</el-button>
     </div>
   </div>
 </template>
