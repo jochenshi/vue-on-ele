@@ -5,22 +5,24 @@
         <span class="activity-name" title="10.18号，新街口春饼店开业，需要鼓手歌手各3名。">10.18号，新街口春饼店开业，需要鼓手歌手各3名。</span>
         <span class="activity-release-time">8小时前</span>
       </li>
-      <li>
-        <span>活动持续时间</span>
-        <span>活动地点</span>
+      <li class="time-location">
+        <span class="last-time">10.18-10.19</span>
+        <span class="event-location">新街口商业区</span>
       </li>
       <li class="apply-detail">
         <div>
-          <div>申请的职位</div>
+          <span class="apply-jobs">歌手</span>
           <div>
-            <span>发布人</span>
-            <span>发布人的认证标签</span>
+            <span>xxx演艺公司</span>
+            <span>已认证</span>
           </div>
         </div>
-        <div class="apply-price">800 人/天</div>
+        <div class="apply-price">
+          ￥
+          <span class="price-num">800</span>
+          <span class="price-unit">/人</span></div>
       </li>
       <li>
-        <div>放置审核流程</div>
         <div class="apply-step">
           <el-steps :center="true" :align-center="true" :active="1">
             <el-step title="报名成功"></el-step>

@@ -31,7 +31,8 @@
         <li>
           <i class="fa fa-flag"></i>
           <span class="label">活动详情</span>
-          <div class="detail-desc">活动详情的内容</div>
+          <div class="detail-desc">新街口春饼店开业活动，招募女模特4名，民族唱法女歌手3名，于2016.10.20 10:00在
+          新街口德基广场1楼集合，不得迟到。</div>
         </li>
       </ul>
     </div>
