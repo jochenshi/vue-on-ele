@@ -52,6 +52,7 @@
     },
     mounted () {
       // this.getSelected()
+      console.log(this.$route.path)
       this.activeIndex = this.$route.path
     },
     computed: {
