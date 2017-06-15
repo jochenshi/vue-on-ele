@@ -72,4 +72,34 @@ var detailActivity = {
   occupations: []
 }
 
-export {applyingData, detailActivity}
+var activities = {data: [
+  { id: 1,
+    title: '新街口酒吧开业需要歌手',
+    release_date: '2017-06-01',
+    start_date: '',
+    end_date: '',
+    sponsor: '发起人1',
+    price: '700',
+    description: ''
+  },
+  { id: 1,
+    title: '湖南路餐厅活动',
+    release_date: '2017-06-01',
+    start_date: '',
+    end_date: '',
+    sponsor: '发起人2',
+    price: '800',
+    description: ''
+  },
+  { id: 1,
+    title: '夫子庙活动',
+    release_date: '2017-06-01',
+    start_date: '',
+    end_date: '',
+    sponsor: '发起人3',
+    price: '600',
+    description: ''
+  }
+]}
+
+export {applyingData, detailActivity, activities}

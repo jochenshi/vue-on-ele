@@ -47,8 +47,9 @@
         const h = this.$createElement
         this.$msgbox({
           title: '报名详情',
-          message: h('detail-activity', this.applyings.activity_name)
-        }).addClass('asd')
+          message: h('detail-activity', this.applyings.activity_name),
+          customClass: 'detail-apply'
+        })
       }
     },
     components: {

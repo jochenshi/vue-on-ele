@@ -25,7 +25,7 @@ if (!isLocal) {
 
   getUser = () => fetch('GET', '/v1/user/', {})
 
-  getActivity = () => fetch('GET', 'v1/activity/', {})
+  getActivity = () => setPromise(localData.activities)
 
   getApplying = () => setPromise(localData.applyingData)
 }

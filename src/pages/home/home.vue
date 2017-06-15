@@ -3,7 +3,7 @@
     <h2>This is home page</h2>
     <div class="product-content">
       <el-row>
-        <el-col :span="6" v-for="(o, index) in activities" v-if="activities.length > 0">
+        <el-col :span="8" v-for="(o, index) in activities" v-if="activities.length > 0">
           <el-card>
             <img src="" alt="">
             <div>
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-  import {getUser, getActivity} from '../service/getData'
+  import {getUser, getActivity} from '../../service/getData'
   export default {
     data () {
       return {
@@ -50,8 +50,4 @@
     }
   }
 </script>
-<style scoped>
-  .release-time{
-    float: right;
-  }
-</style>
+<style scoped lang="stylus" src="./home.styl"></style>

@@ -5,7 +5,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // import App from '../App.vue'
-import Home from '../pages/home.vue'
+import Home from '../pages/home/home.vue'
 import Manage from '../pages/userManage/manage.vue'
 import Personal from '../pages/personal.vue'
 import Recent from '../pages/recent.vue'
