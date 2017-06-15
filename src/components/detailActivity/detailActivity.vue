@@ -97,6 +97,7 @@
         isSigned: false
       }
     },
+    props: ['id'],
     methods: {
       handle (id) {
         alert(id)
@@ -110,4 +111,4 @@
     }
   }
 </script>
-<style lang="stylus" src="./detailActivity.styl"></style>
+<style lang="stylus" src="./detailActivity.styl" scoped></style>
