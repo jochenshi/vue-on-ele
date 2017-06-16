@@ -50,4 +50,4 @@
     }
   }
 </script>
-<style scoped lang="stylus" src="./home.styl"></style>
+<style lang="stylus" src="./home.styl"></style>

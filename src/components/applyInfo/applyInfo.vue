@@ -44,12 +44,17 @@
     props: ['applyings'],
     methods: {
       showDetail () {
-        const h = this.$createElement
-        this.$msgbox({
+        // const h = this.$createElement
+        /* this.$msgbox({
           title: '报名详情',
-          message: h('detail-activity', this.applyings.activity_name),
-          customClass: 'detail-apply'
-        })
+          message: h('detail-activity', {props: {id: this.applyings.id}}),
+          customClass: 'detail-apply',
+          beforeClose: (action, instance, done) => {
+            done()
+            console.log(instance)
+            window.jQuery('.detail-apply').parent().remove()
+          }
+        }) */
       }
     },
     components: {

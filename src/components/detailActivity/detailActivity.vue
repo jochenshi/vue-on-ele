@@ -1,7 +1,7 @@
 <template>
   <div class="activity-detail-content">
     <div class="title-content">
-      <dl class="title">活动标题</dl>
+      <dl class="title">活动标题{{id}}</dl>
       <dl class="release-time">
         <span>发布时间：</span>
         <span>2017-06-01 16:36:10</span>
@@ -43,45 +43,6 @@
       <span class="phone-num" v-else>adsadasdasd</span>
     </div>
     <job-card :jobs=o :index=index v-for="(o, index) in jobs" ></job-card>
-    <!--<div class="jobs-content add-margin" v-for="o in 3">
-        <div>
-          <i class="fa fa-pencil-square-o"></i>
-          <span>职位{{o}}</span>
-          <i class="fa fa-caret-down" v-on:click="show = !show"></i>
-        </div>
-        <transition name="fade">
-          <div v-if="show">
-            <ul class="job-ul">
-              <li>
-                <span>职业类型</span>
-                <span>歌手</span>
-              </li>
-              <li>
-                <span>性别</span>
-                <span>女</span>
-              </li>
-              <li>
-                <span>身高</span>
-                <span>180</span>
-              </li>
-              <li>
-                <span>人数</span>
-                <span>3</span>
-                <span class="remain-number">剩余3个名额</span>
-              </li>
-              <li>
-                <span>价格</span>
-                <span>800</span>
-              </li>
-              <li>
-                <span>职位要求</span>
-                <span>要求民族唱法</span>
-              </li>
-            </ul>
-            <el-button class="apply-btn">报名</el-button>
-          </div>
-        </transition>
-    </div>-->
   </div>
 </template>
 <script>
