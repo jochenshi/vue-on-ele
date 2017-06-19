@@ -37,6 +37,7 @@
 <script>
   import './applyInfo.styl'
   import detailActivity from '../detailActivity/detailActivity.vue'
+  import test from '../test.vue'
   export default {
     data () {
       return {}
@@ -44,21 +45,20 @@
     props: ['applyings'],
     methods: {
       showDetail () {
-        // const h = this.$createElement
-        /* this.$msgbox({
+        const h = this.$createElement
+        this.$msgbox({
           title: '报名详情',
-          message: h('detail-activity', {props: {id: this.applyings.id}}),
+          message: h('test', {props: {id: this.applyings.id}}),
           customClass: 'detail-apply',
           beforeClose: (action, instance, done) => {
-            done()
-            console.log(instance)
-            window.jQuery('.detail-apply').parent().remove()
+            instance.close()
           }
-        }) */
+        })
       }
     },
     components: {
-      detailActivity
+      detailActivity,
+      test
     }
   }
 </script>
