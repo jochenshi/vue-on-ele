@@ -6,15 +6,35 @@
         <el-col :span="8" v-for="(o, index) in activities" v-if="activities.length > 0">
           <el-card>
             <img src="" alt="">
-            <div>
-              <span>{{o.title}}</span><span class="release-time">8小时前</span>
-              <div class="activity-period">活动持续时间</div>
-              <div class="product-tags">放置标签，关键词</div>
-              <div>发起人：{{o.sponsor}}</div>
-              <div class="button-area">
-                <span class="time">{{o.launch_date}}</span>
-                <el-button class="button" type="text" @click="clickCard(o)">查看详细</el-button>
-              </div>
+            <div class="main-activity">
+              <ul>
+                <li>
+                  <span :title="o.title">{{o.title}}</span><span class="release-time">8小时前</span>
+                </li>
+                <li class="middle-content">
+                  <div class="left-content">
+                    <span class="activity-period">10月18日-10月19日</span>
+                    <div class="activity-tags">
+                      <span v-for="i in 5">歌手</span>
+                    </div>
+                    <div class="user-auth">
+                      <span class="user-sponsor">{{o.sponsor}}</span>
+                      <span>
+                        <i class="fa fa-address-card" :class="{certificated: o.certificate}"></i>
+                        <span class="certificate">{{o.certificate ? '已认证' : '未认证'}}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="right-price">
+                    ￥
+                    <span class="price-num">{{o.price}}</span>
+                    <span class="price-unit">/人</span>
+                  </div>
+                </li>
+                <li  class="button-area">
+                  <el-button class="button" type="text" @click="clickCard(o)">查看详细</el-button>
+                </li>
+              </ul>
             </div>
           </el-card>
         </el-col>
@@ -25,6 +45,7 @@
 </template>
 <script>
   import {getUser, getActivity} from '../../service/getData'
+  import detailActivity from '../../components/detailActivity/detailActivity.vue'
   export default {
     data () {
       return {
@@ -35,6 +56,15 @@
     methods: {
       clickCard (index) {
         console.log('you clicked card', index)
+        const h = this.$createElement
+        this.$msgbox({
+          title: '报名详情',
+          message: h('detail-activity', {props: {id: index.id}, key: Date.now()}),
+          customClass: 'detail-apply',
+          beforeClose: (action, instance, done) => {
+            done()
+          }
+        })
       },
       getUsers () {},
       getActivities () {
@@ -47,6 +77,9 @@
     mounted () {
       getUser()
       this.getActivities()
+    },
+    components: {
+      detailActivity
     }
   }
 </script>

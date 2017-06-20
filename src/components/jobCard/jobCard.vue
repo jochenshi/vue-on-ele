@@ -22,8 +22,8 @@
             </li>
             <li>
               <span>人数</span>
-              <span>{{jobs.number}}</span>
-              <span class="remain-number">剩余{{jobs.remain}}个名额</span>
+              <span>{{jobs.total_number}}</span>
+              <span class="remain-number">剩余{{jobs.remain_number}}个名额</span>
             </li>
             <li>
               <span>价格</span>
@@ -31,7 +31,7 @@
             </li>
             <li>
               <span>职位要求</span>
-              <span>{{jobs.description}}</span>
+              <span>{{jobs.requirement}}</span>
             </li>
           </ul>
           <el-button class="apply-btn" @click="signClick(jobs.id)">报名</el-button>

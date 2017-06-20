@@ -1,6 +1,6 @@
 <template>
-  <div class="apply-card" v-on:click="showDetail">
-    <ul class="apply-ul">
+  <div class="apply-card">
+    <ul class="apply-ul" v-on:click="showDetail">
       <li>
         <span class="activity-name" :title="applyings.activity_name">{{applyings.activity_name}}</span>
         <span class="activity-release-time">8小时前</span>
@@ -20,7 +20,8 @@
         <div class="apply-price">
           ￥
           <span class="price-num">{{applyings.price}}</span>
-          <span class="price-unit">/人</span></div>
+          <span class="price-unit">/人</span>
+        </div>
       </li>
       <li>
         <div class="apply-step">
@@ -32,6 +33,10 @@
         </div>
       </li>
     </ul>
+    <div class="apply-btn">
+      <span>审核通过后请您尽快确认出活，否则将会被其他活友接走</span>
+      <el-button size="small" :disabled="applyings.step === 3 ? false : true" @click="handleConfirm">确认</el-button>
+    </div>
   </div>
 </template>
 <script>
@@ -48,12 +53,15 @@
         const h = this.$createElement
         this.$msgbox({
           title: '报名详情',
-          message: h('test', {props: {id: this.applyings.id}}),
+          message: h('detail-activity', {props: {id: this.applyings.id}, key: Date.now()}),
           customClass: 'detail-apply',
           beforeClose: (action, instance, done) => {
-            instance.close()
+            done()
           }
         })
+      },
+      handleConfirm () {
+        alert('confirm')
       }
     },
     components: {

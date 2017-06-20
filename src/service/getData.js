@@ -12,7 +12,7 @@ const setPromise = (data) => {
   })
 }
 const isLocal = true
-var getProduct, getUser, getActivity, getApplying
+var getProduct, getUser, getActivity, getApplying, getDetailActivity
 
 if (!isLocal) {
   getProduct = () => fetch('GET', '', {})
@@ -28,6 +28,8 @@ if (!isLocal) {
   getActivity = () => setPromise(localData.activities)
 
   getApplying = () => setPromise(localData.applyingData)
+
+  getDetailActivity = () => setPromise(localData.detailActivity)
 }
 
-export {getProduct, getUser, getActivity, getApplying}
+export {getProduct, getUser, getActivity, getApplying, getDetailActivity}

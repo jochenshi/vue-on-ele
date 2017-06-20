@@ -46,15 +46,12 @@
   </div>
 </template>
 <script>
-  import jobCard from '../jobCard/jobCard.vue'
+  import jobCard from '../jobCard/testCard.vue'
+  import {getDetailActivity} from '../../service/getData'
   export default {
     data () {
       return {
-        jobs: [
-          {id: 1, occupation: '歌手', sex: 'female', height: '170+', number: 3, price: '800', unit: 'perperson', description: '要求民族唱法', remain: 3},
-          {id: 2, occupation: '鼓手', sex: 'male', height: '175+', number: 2, price: '600', unit: 'perperson', description: '要求有较多演出经历', remain: 2},
-          {id: 3, occupation: '吉他手', sex: 'male', height: '180+', number: 4, price: '600', unit: 'perperson', description: '要求能熟练弹奏以下曲目', remain: 4}
-        ],
+        jobs: [],
         isSigned: false
       }
     },
@@ -65,10 +62,17 @@
       },
       getDetail (id) {
         // 获取活动的详细信息
+        getDetailActivity().then((a) => {
+          this.jobs = a.occupations
+          console.log(a)
+        })
       }
     },
     components: {
       jobCard
+    },
+    mounted () {
+      this.getDetail()
     }
   }
 </script>

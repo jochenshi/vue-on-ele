@@ -61,15 +61,40 @@ var applyingData = [
 var detailActivity = {
   id: 1,
   acivity_name: '10.23号，，鼓楼区活动，需要鼓手歌手各3名。',
-  release_time: '',
-  company: '',
-  authen: true,
-  activity_time: '',
-  gather_time: '',
-  gather_location: '',
-  activity_detail: '',
-  contact: '',
-  occupations: []
+  release_time: '2017-06-01 16:36:10',
+  sponsor: 'xxx活动发布者',
+  certificate: true,
+  start_time: '2017.01.01',
+  end_time: '2017.01.03',
+  gather_time: ' 2017.01.01',
+  gather_location: '新街口德基广场一楼大厅',
+  activity_detail: '新街口春饼店开业活动，招募女主持23，民族唱法歌手3名，于2016.10.20 10:00在 新街口德基广场1楼集合，不得迟到。',
+  contact: '12222222222',
+  subscribed: false,
+  occupations: [
+    {
+      id: 1,
+      occupation: '歌手',
+      sex: 'male',
+      height: '180+',
+      total_number: 3,
+      remain_number: 2,
+      price: '600',
+      unit: 'person',
+      requirement: '有实际的演唱经验，有较多的活动的经历，能自带乐器的'
+    },
+    {
+      id: 2,
+      occupation: '主持',
+      sex: 'female',
+      height: '170+',
+      total_number: 3,
+      remain_number: 2,
+      price: '800',
+      unit: 'person',
+      requirement: '有较多的实际的主持的经验，能应对场上可能发生的各种的意外情况。'
+    }
+  ]
 }
 
 var activities = {data: [
@@ -78,7 +103,8 @@ var activities = {data: [
     release_date: '2017-06-01',
     start_date: '',
     end_date: '',
-    sponsor: '发起人1',
+    sponsor: 'xxx活动发布人1',
+    certificate: true,
     price: '700',
     description: ''
   },
@@ -87,7 +113,8 @@ var activities = {data: [
     release_date: '2017-06-01',
     start_date: '',
     end_date: '',
-    sponsor: '发起人2',
+    sponsor: 'xxx活动发布人2',
+    certificate: false,
     price: '800',
     description: ''
   },
@@ -96,7 +123,8 @@ var activities = {data: [
     release_date: '2017-06-01',
     start_date: '',
     end_date: '',
-    sponsor: '发起人3',
+    sponsor: 'xxx活动发布人3',
+    certificate: false,
     price: '600',
     description: ''
   }
