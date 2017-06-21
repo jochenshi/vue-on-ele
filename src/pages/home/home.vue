@@ -54,12 +54,12 @@
       }
     },
     methods: {
-      clickCard (index) {
-        console.log('you clicked card', index)
+      clickCard (data) {
+        console.log('you clicked card', data)
         const h = this.$createElement
         this.$msgbox({
           title: '报名详情',
-          message: h('detail-activity', {props: {id: index.id}, key: Date.now()}),
+          message: h('detail-activity', {props: {info: data}, key: Date.now()}),
           customClass: 'detail-apply',
           beforeClose: (action, instance, done) => {
             done()

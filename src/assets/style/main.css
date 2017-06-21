@@ -12,3 +12,6 @@ html,body{
 #app{
   overflow: hidden;
 }
+.scollapse-transition{
+  transition: all .3s ease-in-out
+}

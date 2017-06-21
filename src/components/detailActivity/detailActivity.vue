@@ -1,7 +1,7 @@
 <template>
   <div class="activity-detail-content">
     <div class="title-content">
-      <dl class="title">活动标题{{id}}</dl>
+      <dl class="title">活动标题{{info.id}}</dl>
       <dl class="release-time">
         <span>发布时间：</span>
         <span>2017-06-01 16:36:10</span>
@@ -39,23 +39,23 @@
     <div class="contact-content add-margin">
       <i class="fa fa-phone"></i>
       <span>联系方式</span>
-      <span class="phone-tips" v-if="!isSigned">报名成功后可见</span>
+      <span class="phone-tips" v-if="!isSubscribed">报名成功后可见</span>
       <span class="phone-num" v-else>adsadasdasd</span>
     </div>
-    <job-card :jobs=o :index=index v-for="(o, index) in jobs" ></job-card>
+    <job-card :jobs=o :index=index :subscribed="isSubscribed" v-for="(o, index) in jobs" ></job-card>
   </div>
 </template>
 <script>
-  import jobCard from '../jobCard/testCard.vue'
+  import jobCard from '../jobCard/jobCard.vue'
   import {getDetailActivity} from '../../service/getData'
   export default {
     data () {
       return {
         jobs: [],
-        isSigned: false
+        isSubscribed: false
       }
     },
-    props: ['id'],
+    props: ['info'],
     methods: {
       handle (id) {
         alert(id)
@@ -64,6 +64,7 @@
         // 获取活动的详细信息
         getDetailActivity().then((a) => {
           this.jobs = a.occupations
+          // this.isSubscribed = a.isSubscribed
           console.log(a)
         })
       }
@@ -73,6 +74,7 @@
     },
     mounted () {
       this.getDetail()
+      console.log(this.info)
     }
   }
 </script>

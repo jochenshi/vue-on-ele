@@ -1,9 +1,6 @@
 <template>
   <div>
     <apply-info v-for="(o, index) in applyInfo" v-bind:applyings="o" v-on:click="showDetail()">{{o}}</apply-info>
-    <div>
-      <router-view></router-view>
-    </div>
   </div>
 </template>
 <script>

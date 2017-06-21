@@ -70,7 +70,8 @@ var detailActivity = {
   gather_location: '新街口德基广场一楼大厅',
   activity_detail: '新街口春饼店开业活动，招募女主持23，民族唱法歌手3名，于2016.10.20 10:00在 新街口德基广场1楼集合，不得迟到。',
   contact: '12222222222',
-  subscribed: false,
+  subscribe_status: 'successful',
+  isSubscribed: true,
   occupations: [
     {
       id: 1,

@@ -2,7 +2,7 @@
   <div class="post">
     <div v-if="loading">loading</div>
     <div v-if="">{{$route.params.id}}</div>
-    <detail-activity></detail-activity>
+    <detail-activity :info="{id: 1}"></detail-activity>
     <div v-if="datas.length > 0">
       <span>请求数据成功</span>
     </div>

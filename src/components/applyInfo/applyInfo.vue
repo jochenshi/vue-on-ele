@@ -53,7 +53,7 @@
         const h = this.$createElement
         this.$msgbox({
           title: '报名详情',
-          message: h('detail-activity', {props: {id: this.applyings.id}, key: Date.now()}),
+          message: h('detail-activity', {props: {info: this.applyings}, key: Date.now()}),
           customClass: 'detail-apply',
           beforeClose: (action, instance, done) => {
             done()
