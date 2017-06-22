@@ -1,6 +1,6 @@
 <template>
   <div class="apply-card">
-    <ul class="apply-ul" v-on:click="showDetail">
+    <ul class="apply-ul">
       <li>
         <span class="activity-name" :title="applyings.activity_name">{{applyings.activity_name}}</span>
         <span class="activity-release-time">8小时前</span>
@@ -35,7 +35,7 @@
     </ul>
     <div class="apply-btn">
       <span>审核通过后请您尽快确认出活，否则将会被其他活友接走</span>
-      <el-button size="small" :disabled="applyings.step === 3 ? false : true" @click="handleConfirm">确认</el-button>
+      <el-button size="small" :disabled="applyings.step === 3 ? false : true" @click="handleConfirm(applyings)">确认</el-button>
     </div>
   </div>
 </template>
@@ -49,19 +49,13 @@
     },
     props: ['applyings'],
     methods: {
-      showDetail () {
-        const h = this.$createElement
+      handleConfirm (applyings) {
+        console.log(applyings)
+        var h = this.$createElement
         this.$msgbox({
-          title: '报名详情',
-          message: h('detail-activity', {props: {info: this.applyings}, key: Date.now()}),
-          customClass: 'detail-apply',
-          beforeClose: (action, instance, done) => {
-            done()
-          }
+          title: '报名提示',
+          message: h('div', null, [h('div', null, '确认出活将先收取您活动费用的15%作为保证金以确保您按时出席，活动结束后，保证金全额返还'), h('div', null, 'aaaaa')])
         })
-      },
-      handleConfirm () {
-        alert('confirm')
       }
     },
     components: {

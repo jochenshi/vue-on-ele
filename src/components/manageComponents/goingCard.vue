@@ -24,6 +24,7 @@
         </div>
       </li>
     </ul>
+    <slot name="button"></slot>
   </div>
 </template>
 <script>
