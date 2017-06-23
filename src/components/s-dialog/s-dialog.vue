@@ -1,18 +1,13 @@
 <template>
-  <transition name="s_dialog_fade">
-    <div class="s_dialog_wrapper">
-      <div class="s_dialog">
-        <div class="s_dialog_header"></div>
-        <div class="s_dialog_body"></div>
-        <div class="s_dialog_footer"></div>
-      </div>
-    </div>
-  </transition>
+  <el-dialog title="提示"></el-dialog>
 </template>
 <script>
   export default {
     data () {
       return {}
+    },
+    render () {
+
     }
   }
 </script>

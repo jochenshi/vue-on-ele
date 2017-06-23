@@ -28,7 +28,7 @@ var applyingData = [
     jobs: '主持',
     price: '750',
     unit: 'group',
-    step: 2},
+    step: 3},
   { id: 4,
     activity_name: '10.21号，湖南路活动，需要鼓手歌手各3名。',
     release_time: '11小时前',

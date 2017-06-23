@@ -42,7 +42,6 @@
 <script>
   import './applyInfo.styl'
   import detailActivity from '../detailActivity/detailActivity.vue'
-  import test from '../test.vue'
   export default {
     data () {
       return {}
@@ -52,15 +51,27 @@
       handleConfirm (applyings) {
         console.log(applyings)
         var h = this.$createElement
+        var security = applyings.price * 0.15
         this.$msgbox({
           title: '报名提示',
-          message: h('div', null, [h('div', null, '确认出活将先收取您活动费用的15%作为保证金以确保您按时出席，活动结束后，保证金全额返还'), h('div', null, 'aaaaa')])
+          customClass: 'regist-tip',
+          message: h('div', {'class': 'tip-wrapper', key: Date.now()},
+            [h('div', {'class': 'first-tip'}, '确认出活将先收取您活动费用的15%作为保证金以确保您按时出席，活动结束后，保证金全额返还'),
+              h('div', {'class': 'tip-content'}, [h('div', {'class': 'security-moneny'}, '本次活动保证金为：' + security), h('div', null, '确认支付？')])]),
+          showCancelButton: true,
+          closeOnClickModal: false,
+          beforeClose: function (action, instance, done) {
+            if (action === 'confirm') {
+              alert('confirm')
+            } else {
+              done()
+            }
+          }
         })
       }
     },
     components: {
-      detailActivity,
-      test
+      detailActivity
     }
   }
 </script>
