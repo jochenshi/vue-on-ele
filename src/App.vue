@@ -26,7 +26,7 @@
     data () {
       return {
         activeIndex: '1',
-        isLogin: false
+        isLogin: true
       }
     },
     methods: {
