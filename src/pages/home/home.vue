@@ -77,6 +77,7 @@
     mounted () {
       getUser()
       this.getActivities()
+      console.log(this.$store.state)
     },
     components: {
       detailActivity

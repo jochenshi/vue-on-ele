@@ -1,6 +1,6 @@
 <template>
   <div class="app-content">
-    <div class="app-nav-title">
+    <div class="app-nav-title" v-if="isLogin">
       <el-menu mode="horizontal" :router="true" :default-active="activeIndex" @select="handleSelect" class="nav-content">
         <el-menu-item index="/home">首页</el-menu-item>
         <el-submenu index="2">
@@ -25,7 +25,8 @@
   export default {
     data () {
       return {
-        activeIndex: '1'
+        activeIndex: '1',
+        isLogin: false
       }
     },
     methods: {
