@@ -13,7 +13,8 @@ Vue.use(Vuex)
 const state = {
   username: '', // 存储用户名
   userId: 11,  // 用户的ID，用于进行与用户ID有关的操作
-  token: ''  // 储存相关的身份的token
+  token: '',  // 储存相关的身份的token
+  isLogin: false
 }
 
 export default new Vuex.Store({

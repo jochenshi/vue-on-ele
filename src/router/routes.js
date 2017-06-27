@@ -4,7 +4,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// import App from '../App.vue'
+import store from '../store'
+
+import App from '../App.vue'
 import Home from '../pages/home/home.vue'
 import Manage from '../pages/userManage/manage.vue'
 import Personal from '../pages/personal.vue'
@@ -19,12 +21,13 @@ import MyFocus from '../pages/myFocus/myFocus.vue'
 import ReceicedJudge from '../pages/judge/receivedJudge.vue'
 import GivingJudge from '../pages/judge/givingJudge.vue'
 import MySetting from '../pages/setting/mySetting.vue'
+import Login from '../pages/login/login.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
-    /* {
+    {
       path: '/',
       component: App,
       children: [
@@ -42,11 +45,43 @@ export default new Router({
           children: [
             {
               path: '',
-              redirect: 'applying'
+              redirect: 'personalInfo'
             },
             {
               path: 'applying',
               component: MyApply
+            },
+            {
+              path: 'going',
+              component: GoingActivity
+            },
+            {
+              path: 'finished',
+              component: FinishedActivity
+            },
+            {
+              path: 'personalInfo',
+              component: PersonalInfo
+            },
+            {
+              path: 'myMessage',
+              component: MyMessage
+            },
+            {
+              path: 'myFocus',
+              component: MyFocus
+            },
+            {
+              path: 'receivedJudge',
+              component: ReceicedJudge
+            },
+            {
+              path: 'givingJudge',
+              component: GivingJudge
+            },
+            {
+              path: 'mySetting',
+              component: MySetting
             }
           ]
         },
@@ -63,8 +98,12 @@ export default new Router({
           component: ActivityDetail
         }
       ]
-    } */
+    },
     {
+      path: '/login',
+      component: Login
+    }
+    /* {
       path: '',
       redirect: 'home'
     },
@@ -129,6 +168,29 @@ export default new Router({
     {
       path: '/detailActivity/:id',
       component: ActivityDetail
-    }
+    } */
   ]
 })
+router.beforeEach((to, from, next) => {
+  /* console.log('to', to)
+  console.log('from', from) */
+  /* if (store.state.isLogin) {
+    next()
+  } else {
+    next({path: '/login'})
+  } */
+  if (store.state.isLogin) {
+    if (to.path === '/login') {
+      next({path: '/'})
+    } else {
+      next()
+    }
+  } else {
+    if (to.path === '/login') {
+      next()
+    } else {
+      next({path: '/login'})
+    }
+  }
+})
+export default router

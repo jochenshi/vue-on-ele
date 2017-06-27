@@ -9,7 +9,7 @@ import './assets/font-awesome-4.7.0/css/font-awesome.min.css'
 // import 'iview/dist/styles/iview.css'
 import store from './store'
 
-import App from './App.vue'
+// import App from './App.vue'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -17,8 +17,6 @@ Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<App/>',
-  components: {App},
   router,
   store
 })
