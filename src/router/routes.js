@@ -22,6 +22,7 @@ import ReceicedJudge from '../pages/judge/receivedJudge.vue'
 import GivingJudge from '../pages/judge/givingJudge.vue'
 import MySetting from '../pages/setting/mySetting.vue'
 import Login from '../pages/login/login.vue'
+import Map from '../pages/map/map.vue'
 
 Vue.use(Router)
 
@@ -96,6 +97,14 @@ const router = new Router({
         {
           path: '/detailActivity/:id',
           component: ActivityDetail
+        },
+        {
+          path: '/add',
+          component: Map
+        },
+        {
+          path: '/map',
+          component: Map
         }
       ]
     },

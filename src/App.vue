@@ -16,6 +16,7 @@
         <el-menu-item index="/detailActivity/2">详情模板</el-menu-item>
         <el-menu-item index="/personal" class="personal-nav">个人</el-menu-item>
         <el-menu-item index="/add">发布活动</el-menu-item>
+        <el-menu-item index="/map">地图展示</el-menu-item>
       </el-menu>
     </div>
     <router-view></router-view>
