@@ -131,4 +131,6 @@ var activities = {data: [
   }
 ]}
 
-export {applyingData, detailActivity, activities}
+var identity = {id: '1', token: 'asdasdasdasdtoke='}
+
+export {applyingData, detailActivity, activities, identity}

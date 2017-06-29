@@ -181,14 +181,10 @@ const router = new Router({
   ]
 })
 router.beforeEach((to, from, next) => {
-  /* console.log('to', to)
-  console.log('from', from) */
-  /* if (store.state.isLogin) {
-    next()
-  } else {
-    next({path: '/login'})
-  } */
+  console.log('to', to)
+  console.log('from', from)
   if (store.state.isLogin) {
+    // 增加判断，以防重复进入beforeEach，从而进入循环
     if (to.path === '/login') {
       next({path: '/'})
     } else {
