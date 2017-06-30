@@ -1,6 +1,7 @@
 <template>
   <div class="page-area">
     <h2>This is home page</h2>
+    <div class="search-area"></div>
     <div class="product-content">
       <el-row>
         <el-col :span="8" v-for="(o, index) in activities" v-if="activities.length > 0">

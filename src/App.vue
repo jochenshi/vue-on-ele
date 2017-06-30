@@ -17,6 +17,7 @@
         <el-menu-item index="/personal" class="personal-nav">个人</el-menu-item>
         <el-menu-item index="/add">发布活动</el-menu-item>
         <el-menu-item index="/map">地图展示</el-menu-item>
+        <el-menu-item index="/reviewActivity">活动审核</el-menu-item>
       </el-menu>
     </div>
     <router-view></router-view>

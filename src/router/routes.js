@@ -23,6 +23,7 @@ import GivingJudge from '../pages/judge/givingJudge.vue'
 import MySetting from '../pages/setting/mySetting.vue'
 import Login from '../pages/login/login.vue'
 import Map from '../pages/map/map.vue'
+import ReviewActivity from '../pages/reviewActivity/reviewActivity.vue'
 
 Vue.use(Router)
 
@@ -105,6 +106,10 @@ const router = new Router({
         {
           path: '/map',
           component: Map
+        },
+        {
+          path: '/reviewActivity',
+          component: ReviewActivity
         }
       ]
     },
@@ -181,8 +186,8 @@ const router = new Router({
   ]
 })
 router.beforeEach((to, from, next) => {
-  console.log('to', to)
-  console.log('from', from)
+  /* console.log('to', to)
+  console.log('from', from) */
   if (store.state.isLogin) {
     // 增加判断，以防重复进入beforeEach，从而进入循环
     if (to.path === '/login') {

@@ -7,11 +7,11 @@
     <!--此处不能使用v-if进行条件展示，需要都进行渲染并在渲染之初就将相应的验证规则添加上去-->
     <div class="login-area" v-show="login">
       <el-form :model="loginForm" ref="loginForm" :rules="loginRules">
-        <el-form-item prop="login_account" label="账号">
+        <el-form-item prop="account" label="账号">
           <el-input v-model="loginForm.account">
           </el-input>
         </el-form-item>
-        <el-form-item prop="login_password" label="密码">
+        <el-form-item prop="password" label="密码">
           <el-input v-model="loginForm.password" type="password">
           </el-input>
         </el-form-item>
@@ -22,13 +22,13 @@
     </div>
     <div class="regist-area" v-show="!login">
       <el-form :model="registForm" ref="registForm" :rules="registRules">
-        <el-form-item prop="regist_nickname" label="昵称">
+        <el-form-item prop="nickname" label="昵称">
           <el-input v-model="registForm.nickname"></el-input>
         </el-form-item>
-        <el-form-item prop="regist_account" label="账号">
+        <el-form-item prop="account" label="账号">
           <el-input v-model="registForm.account"></el-input>
         </el-form-item>
-        <el-form-item prop="regist_password" label="密码">
+        <el-form-item prop="password" label="密码">
           <el-input v-model="registForm.password" type="password"></el-input>
         </el-form-item>
         <el-form-item>
@@ -39,6 +39,7 @@
   </div>
 </template>
 <script>
+  import {login} from '../../service/getData'
   export default {
     data () {
       return {
@@ -53,21 +54,21 @@
           password: ''
         },
         loginRules: {
-          login_account: [
+          account: [
             {required: true, message: '请输入账号', trigger: 'blur'}
           ],
-          login_password: [
+          password: [
             {required: true, message: '请输入密码', trigger: 'blur'}
           ]
         },
         registRules: {
-          regist_nickname: [
+          nickname: [
             {required: true, message: '昵称不能为空', trigger: 'blur'}
           ],
-          regist_account: [
+          account: [
             {required: true, message: '账号不能为空', trigger: 'blur'}
           ],
-          regist_password: [
+          password: [
             {required: true, message: '密码不能为空', trigger: 'blur'}
           ]
         }
@@ -78,6 +79,12 @@
         this.$refs['loginForm'].validate((valid) => {
           if (valid) {
             console.log(this.loginForm)
+            login(this.loginForm).then((data) => {
+              this.$store.dispatch('loginRecord', data).then(() => {
+                console.log(11111)
+                this.$router.push('/home')
+              })
+            })
           } else {
             return false
           }

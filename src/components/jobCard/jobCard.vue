@@ -51,6 +51,7 @@
         isActive: true
       }
     },
+    // jobs是单个职位的信息,index是循环时传入的职位的索引，从0开始，用于标记是第几个职位,subscribed用于标记用户是否已经报名过这个活动
     props: ['jobs', 'index', 'subscribed'],
     methods: {
       handleIconClick () {
@@ -67,7 +68,7 @@
       }
     },
     mounted () {
-      console.log(this.subscribed)
+      console.log(this.jobs)
     },
     components: {
       cardTransition

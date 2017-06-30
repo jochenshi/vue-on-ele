@@ -133,4 +133,19 @@ var activities = {data: [
 
 var identity = {id: '1', token: 'asdasdasdasdtoke='}
 
-export {applyingData, detailActivity, activities, identity}
+var login = {
+  id: '1',
+  token: 'asdasdasdasdsad22='
+}
+
+var reviewActivity = [
+  {
+    id: 1,
+    activity_name: '10.23号，，鼓楼区活动，需要鼓手歌手各3名。',
+    sponsor: 'xxx活动发布者1',
+    release_time: '2017-06-01 16:36:10',
+    activity_detail: '新街口春饼店开业活动，招募女主持23，民族唱法歌手3名，于2016.10.20 10:00在 新街口德基广场1楼集合，不得迟到。'
+  }
+]
+
+export {applyingData, detailActivity, activities, identity, login, reviewActivity}
