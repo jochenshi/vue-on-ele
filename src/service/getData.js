@@ -12,14 +12,18 @@ const setPromise = (data) => {
   })
 }
 const isLocal = true
-var getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews
+var getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews, getInfo, setInfo
 
 if (!isLocal) {
   getProduct = () => fetch('GET', '', {})
 
   getUser = () => fetch('GET', '/v1/user/', {})
 
-  getActivity = () => fetch('GET', 'v1/activity/', {})
+  getActivity = () => fetch('GET', '/v1/activity/', {})
+
+  getInfo = () => fetch('GET', '/v1/personalInfo', {})
+
+  setInfo = (data) => fetch('POST', '/v1/personalInfo', data)
 } else {
   getProduct = () => fetch('GET', '', {})
 
@@ -36,6 +40,10 @@ if (!isLocal) {
   login = () => setPromise(localData.login)
 
   getReviews = () => setPromise(localData.reviewActivity)
+
+  getInfo = () => fetch('GET', '/v1/personalInfo', {})
+
+  setInfo = (data) => fetch('POST', '/v1/personalInfo', data)
 }
 
-export {getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews}
+export {getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews, getInfo, setInfo}

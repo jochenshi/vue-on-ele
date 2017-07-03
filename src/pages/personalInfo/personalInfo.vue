@@ -45,6 +45,7 @@
   </div>
 </template>
 <script>
+  import {getInfo, setInfo} from '../../service/getData'
   export default {
     data () {
       let checkPhone = function (rule, value, callback) {
@@ -52,6 +53,16 @@
           callback(new Error('请输入手机号码'))
         } else if (!Number.isInteger(value) || value.toString().length !== 11) {
           callback(new Error('请输入正确的手机号码格式'))
+        } else {
+          callback()
+        }
+      }
+      let checkBirth = (rule, value, callback) => {
+        let curDate = new Date().getTime()
+        if (!value) {
+          callback(new Error('请选择出生日期'))
+        } else if (new Date(value).getTime() > curDate) {
+          callback(new Error('出生日期不能晚于当前日期'))
         } else {
           callback()
         }
@@ -75,7 +86,7 @@
             {required: true, message: '请选择性别', trigger: 'change'}
           ],
           birth: [
-            {type: 'date', required: true, message: '请选择出生日期', trigger: 'change'}
+            {validator: checkBirth, trigger: 'change'}
           ],
           height: [
             {required: true, message: '请输入身高'},
@@ -96,11 +107,22 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             console.log(data)
+            setInfo(data).then(() => {
+              this.getInfo()
+            })
           } else {
             return false
           }
         })
+      },
+      getInfo () {
+        getInfo().then((data) => {
+          this.infoForm = data
+        })
       }
+    },
+    mounted () {
+      this.getInfo()
     }
   }
 </script>

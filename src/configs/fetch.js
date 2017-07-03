@@ -31,8 +31,8 @@ export default (type = 'GET', url = '', data = {}) => {
   }
   let promise = new Promise((resolve, reject) => {
     requestObj.open(type, url, true)
+    requestObj.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     requestObj.send(sendData)
-    // requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     requestObj.onreadystatechange = () => {
       if (requestObj.readyState === 4) {
         if (requestObj.status === 200) {
@@ -43,6 +43,7 @@ export default (type = 'GET', url = '', data = {}) => {
           }
           resolve(obj)
         } else {
+          console.log(requestObj.status)
           reject(new Error(requestObj))
         }
       }

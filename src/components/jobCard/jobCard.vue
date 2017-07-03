@@ -59,7 +59,7 @@
       },
       signClick (param) {
         // alert('received data:' + param)
-        var taga = confirm('确认出活将收取您活动费用的15%作为保证金，以确保您按时出席，活动结束后，保证金全额返还。本次需支付：200活宝，确认支付?')
+        var taga = confirm('报名将消耗1活券，是否确认报名？')
         if (taga) {
           alert('you clicked confirm')
         } else {
