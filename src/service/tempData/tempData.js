@@ -107,7 +107,8 @@ var activities = {data: [
     sponsor: 'xxx活动发布人1',
     certificate: true,
     price: '700',
-    description: ''
+    price_unit: 'person',
+    jobs: ['singer', 'dancer', 'drummer', 'guitarist', 'violinist']
   },
   { id: 1,
     title: '湖南路餐厅活动',
@@ -117,7 +118,8 @@ var activities = {data: [
     sponsor: 'xxx活动发布人2',
     certificate: false,
     price: '800',
-    description: ''
+    price_unit: 'person',
+    jobs: ['singer', 'dancer', 'drummer', 'guitarist', 'violinist']
   },
   { id: 1,
     title: '夫子庙活动',
@@ -127,7 +129,8 @@ var activities = {data: [
     sponsor: 'xxx活动发布人3',
     certificate: false,
     price: '600',
-    description: ''
+    price_unit: 'person',
+    jobs: ['singer', 'dancer', 'drummer', 'guitarist', 'violinist']
   }
 ]}
 

@@ -9,9 +9,9 @@ html,body{
 .page-area{
   overflow: auto;
 }
-#app{
+/*#app{
   overflow: hidden;
-}
+}*/
 .scollapse-transition{
   transition: all .3s ease-in-out
 }

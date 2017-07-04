@@ -16,7 +16,12 @@
                   <div class="left-content">
                     <span class="activity-period">10月18日-10月19日</span>
                     <div class="activity-tags">
-                      <span v-for="i in 5">歌手</span>
+                      <template v-if="o.jobs.length < 5">
+                        <span v-for="(i, indexs) in o.jobs">{{i}}</span>
+                      </template>
+                      <template v-else>
+                        <span v-for="i in 4">{{o.jobs[i]}}</span>
+                      </template>
                     </div>
                     <div class="user-auth">
                       <span class="user-sponsor">{{o.sponsor}}</span>
@@ -46,6 +51,7 @@
 </template>
 <script>
   import {getUser, getActivity} from '../../service/getData'
+  import {formatJobs} from '../../service/publicActions/methods'
   import detailActivity from '../../components/detailActivity/detailActivity.vue'
   export default {
     data () {
@@ -62,6 +68,7 @@
           title: '报名详情',
           message: h('detail-activity', {props: {info: data}, key: Date.now()}),
           customClass: 'detail-apply',
+          closeOnClickModal: false,
           beforeClose: (action, instance, done) => {
             done()
           }
@@ -70,6 +77,9 @@
       getUsers () {},
       getActivities () {
         getActivity().then((a) => {
+          a.data.forEach((val, index) => {
+            val.jobs = formatJobs(val.jobs)
+          })
           this.activities = a.data
           console.log(a)
         })
