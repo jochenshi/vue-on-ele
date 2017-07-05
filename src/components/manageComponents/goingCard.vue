@@ -2,18 +2,18 @@
   <div class="going-card">
     <ul class="apply-ul" v-on:click="showDetail">
       <li>
-        <span class="activity-name" :title="applyings.activity_name">{{applyings.activity_name}}</span>
-        <span class="activity-release-time">8小时前</span>
+        <span class="activity-name" :title="applyings.activity_name">{{applyings.title}}</span>
+        <span class="activity-release-time">{{release_time}}</span>
       </li>
       <li class="time-location">
         <span class="last-time">10.18-10.19</span>
-        <span class="event-location">{{applyings.event_location}}</span>
+        <span class="event-location">{{applyings.activity_place}}</span>
       </li>
       <li class="apply-detail">
         <div>
           <span class="apply-jobs">{{applyings.jobs}}</span>
           <div>
-            <span>xxx演艺公司</span>
+            <span>{{applyings.sponsor}}</span>
             <span>已认证</span>
           </div>
         </div>
@@ -28,11 +28,17 @@
   </div>
 </template>
 <script>
+  import {getDateDiff} from '../../service/publicActions/methods'
   export default {
     data () {
       return {}
     },
     props: ['applyings'],
+    computed: {
+      release_time: function () {
+        return getDateDiff(this.applyings.release_time)
+      }
+    },
     methods: {
       showDetail () {}
     }

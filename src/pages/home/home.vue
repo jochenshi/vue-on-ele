@@ -10,7 +10,7 @@
             <div class="main-activity">
               <ul>
                 <li>
-                  <span :title="o.title">{{o.title}}</span><span class="release-time">8小时前</span>
+                  <span :title="o.title">{{o.title}}</span><span class="release-time">{{o.release_time}}</span>
                 </li>
                 <li class="middle-content">
                   <div class="left-content">
@@ -51,7 +51,7 @@
 </template>
 <script>
   import {getUser, getActivity} from '../../service/getData'
-  import {formatJobs} from '../../service/publicActions/methods'
+  import {formatJobs, getDateDiff} from '../../service/publicActions/methods'
   import detailActivity from '../../components/detailActivity/detailActivity.vue'
   export default {
     data () {
@@ -77,11 +77,14 @@
       getUsers () {},
       getActivities () {
         getActivity().then((a) => {
-          a.data.forEach((val, index) => {
+          // 此处为隔离因对象引用而产生的影响
+          let datas = JSON.parse(JSON.stringify(a))
+          datas.data.forEach((val, index) => {
             val.jobs = formatJobs(val.jobs)
+            val.release_time = getDateDiff(val.release_time)
           })
-          this.activities = a.data
-          console.log(a)
+          this.activities = datas.data
+          console.log('2', datas)
         })
       }
     },

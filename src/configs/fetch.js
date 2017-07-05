@@ -31,7 +31,7 @@ export default (type = 'GET', url = '', data = {}) => {
   }
   let promise = new Promise((resolve, reject) => {
     requestObj.open(type, url, true)
-    requestObj.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    requestObj.setRequestHeader('Content-Type', 'application/json')
     requestObj.send(sendData)
     requestObj.onreadystatechange = () => {
       if (requestObj.readyState === 4) {
@@ -41,10 +41,12 @@ export default (type = 'GET', url = '', data = {}) => {
             obj = JSON.parse(obj)
             console.log('This is from fetch', obj)
           }
-          resolve(obj)
+          setTimeout(() => {
+            resolve(obj)
+          }, 5000)
         } else {
           console.log(requestObj.status)
-          reject(new Error(requestObj))
+          reject(requestObj.response)
         }
       }
     }
