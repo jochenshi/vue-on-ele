@@ -4,7 +4,7 @@
 var applyingData = [
   { id: 1,
     title: '10.18号，新街口春饼店开业，需要鼓手歌手各3名。',
-    release_time: 1499237307822,
+    release_time: 1499310715273,
     lasting_time: '10.18-10.19',
     activity_place: '新街口商区',
     jobs: '主持',
@@ -16,7 +16,7 @@ var applyingData = [
   },
   { id: 2,
     title: '10.19号，钟灵街店庆活动，需要主持、歌手各3名。',
-    release_time: 1499237307822,
+    release_time: 1499310715273,
     lasting_time: '10.18-10.19',
     activity_place: '钟灵街商区',
     jobs: '歌手',
@@ -169,4 +169,23 @@ var reviewActivity = [
   }
 ]
 
-export {applyingData, detailActivity, activities, identity, login, reviewActivity}
+var certainGoActivity = {
+  data: {
+    title: '10.23号，鼓楼区活动，需要鼓手歌手各3名。',
+    release_time: 1499237307822,
+    lasting_time: '10.18-10.19',
+    activity_place: '上海路商区',
+    gather_time: '',
+    gather_place: '上海路地铁站',
+    jobs: ['singer'],
+    price: '850',
+    unit: 'person',
+    certificate: false,
+    sponsor: 'xxx演艺活动公司',
+    description: '鼓楼区活动，需要歌手3名，希望有实际活动经验的歌手积极报名，报酬丰厚！',
+    contact: {phone: 12345678909, wechat: 12345678909}
+  },
+  mess: '获取成功'
+}
+
+export {applyingData, detailActivity, activities, identity, login, reviewActivity, certainGoActivity}

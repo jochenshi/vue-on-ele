@@ -5,7 +5,7 @@
 </template>
 <script>
   import goingCard from '../../components/manageComponents/goingCard.vue'
-  import {getApplying} from '../../service/getData'
+  import {getGoingActivity} from '../../service/getData'
   export default {
     data () {
       return {
@@ -16,7 +16,7 @@
       goingCard
     },
     mounted () {
-      getApplying().then((data) => {
+      getGoingActivity().then((data) => {
         this.goingApply = data
       })
     }

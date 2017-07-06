@@ -59,8 +59,9 @@
     },
     mounted () {
       // this.getSelected()
-      console.log(this.$route.path)
-      this.activeIndex = this.$route.path
+      console.log(this.$route)
+      var tempPath = this.$route.path.split('/')[1]
+      this.activeIndex = '/' + tempPath
     },
     computed: {
     }

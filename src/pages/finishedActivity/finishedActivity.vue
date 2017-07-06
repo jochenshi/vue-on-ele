@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-  import finishCard from '../../components/manageComponents/goingCard.vue'
+  import finishCard from '../../components/manageComponents/finishedCard.vue'
   import {getApplying} from '../../service/getData'
   import './finishedActivity.styl'
   export default {

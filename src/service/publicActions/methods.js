@@ -1,7 +1,7 @@
 /**
  * Created by Jincheng on 2017/7/3.
  */
-var formatTime, formatJobs, getDateDiff, getTimes
+var formatTime, formatJobs, getDateDiff, getTimes, getContact
 
 formatTime = () => {
 
@@ -69,4 +69,21 @@ getDateDiff = (time) => {
   return result
 }
 
-export {formatTime, formatJobs, getDateDiff, getTimes}
+// 在展示联系方式时，将对应的英文转换为中文
+getContact = (text) => {
+  let list = {
+    'phone': '手机',
+    'wechat': '微信'
+  }
+  if (!text) {
+    console.log('getContact do not get params')
+    return
+  }
+  if (list[text]) {
+    return list[text]
+  } else {
+    return 'Can not translate this to chinese'
+  }
+}
+
+export {formatTime, formatJobs, getDateDiff, getTimes, getContact}

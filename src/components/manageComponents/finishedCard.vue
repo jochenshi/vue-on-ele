@@ -1,6 +1,6 @@
 <template>
   <div class="going-card">
-    <ul class="apply-ul" v-on:click="showDetail">
+    <ul class="apply-ul">
       <li>
         <span class="activity-name" :title="applyings.activity_name">{{applyings.title}}</span>
         <span class="activity-release-time">{{release_time}}</span>
@@ -32,7 +32,6 @@
 </template>
 <script>
   import {getDateDiff} from '../../service/publicActions/methods'
-  import goingDetail from '../../pages/goingActivity/detail/goingDetail.vue'
   export default {
     data () {
       return {}
@@ -44,17 +43,7 @@
       }
     },
     methods: {
-      showDetail () {
-        var h = this.$createElement
-        this.$msgbox({
-          title: '正在出活',
-          message: h('going-detail', {key: Date.now(), props: {id: this.applyings.id}}),
-          customClass: 'going-message'
-        })
-      }
-    },
-    components: {
-      goingDetail
+      showDetail () {}
     }
   }
 </script>

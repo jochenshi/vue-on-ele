@@ -13,7 +13,7 @@ const setPromise = (data) => {
 }
 const isLocal = true
 var getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews, getInfo, setInfo,
-  handleSign, confirmApply
+  handleSign, confirmApply, getGoingActivity, getFinishedActivity, getCertainActivity
 
 if (!isLocal) {
   getProduct = () => fetch('GET', '', {})
@@ -29,6 +29,10 @@ if (!isLocal) {
   handleSign = (data) => fetch('POST', '/v1/sign', data)
 
   confirmApply = (data) => fetch('POST', '/v1/confirmApply', data)
+
+  getGoingActivity = () => setPromise(localData.applyingData)
+
+  getFinishedActivity = () => setPromise(localData.applyingData)
 } else {
   getProduct = () => fetch('GET', '', {})
 
@@ -53,6 +57,13 @@ if (!isLocal) {
   handleSign = (data) => fetch('POST', '/v1/sign', data)
 
   confirmApply = (data) => fetch('POST', '/v1/confirmApply', data)
+
+  getGoingActivity = () => setPromise(localData.applyingData)
+
+  getFinishedActivity = () => setPromise(localData.applyingData)
+
+  getCertainActivity = () => setPromise(localData.certainGoActivity)
 }
 
-export {getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews, getInfo, setInfo, handleSign, confirmApply}
+export {getProduct, getUser, getActivity, getApplying, getDetailActivity, getIdentity, login, getReviews, getInfo, setInfo, handleSign, confirmApply,
+getGoingActivity, getFinishedActivity, getCertainActivity}

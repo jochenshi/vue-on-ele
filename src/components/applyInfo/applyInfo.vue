@@ -60,6 +60,7 @@
     methods: {
       handleConfirm (applyings) {
         console.log(applyings)
+        var _this = this
         var h = this.$createElement
         var security = applyings.price * 0.15
         this.$msgbox({
@@ -84,6 +85,7 @@
                     message: '确认出活成功',
                     type: 'success'
                   })
+                  _this.$emit('updateApply')
                 }, 1000)
               }).catch((val) => {
                 instance.confirmButtonLoading = false

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <apply-info v-for="(o, index) in applyInfo" v-bind:applyings="o">{{o}}</apply-info>
+    <apply-info v-for="(o, index) in applyInfo" v-bind:applyings="o" v-on:updateApply="getApply">{{o}}</apply-info>
   </div>
 </template>
 <script>
@@ -21,6 +21,11 @@
         getApplying().then((data) => {
           this.applyInfo = data
           console.log(this.applyInfo)
+        })
+      },
+      getApply () {
+        getApplying().then((data) => {
+          this.applyInfo = data
         })
       }
     },

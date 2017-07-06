@@ -39,7 +39,8 @@ const router = new Router({
         },
         {
           path: '/home',
-          component: Home
+          component: Home,
+          name: 'home'
         },
         {
           path: '/manage',
@@ -51,39 +52,48 @@ const router = new Router({
             },
             {
               path: 'applying',
-              component: MyApply
+              component: MyApply,
+              name: 'applying'
             },
             {
               path: 'going',
-              component: GoingActivity
+              component: GoingActivity,
+              name: 'going'
             },
             {
               path: 'finished',
-              component: FinishedActivity
+              component: FinishedActivity,
+              name: 'finished'
             },
             {
               path: 'personalInfo',
-              component: PersonalInfo
+              component: PersonalInfo,
+              name: 'personalInfo'
             },
             {
               path: 'myMessage',
-              component: MyMessage
+              component: MyMessage,
+              name: 'myManage'
             },
             {
               path: 'myFocus',
-              component: MyFocus
+              component: MyFocus,
+              name: 'myFocus'
             },
             {
               path: 'receivedJudge',
-              component: ReceicedJudge
+              component: ReceicedJudge,
+              name: 'receivedJudge'
             },
             {
               path: 'givingJudge',
-              component: GivingJudge
+              component: GivingJudge,
+              name: 'givingJudge'
             },
             {
               path: 'mySetting',
-              component: MySetting
+              component: MySetting,
+              name: 'muSetting'
             }
           ]
         },
@@ -93,7 +103,8 @@ const router = new Router({
         },
         {
           path: 'recent',
-          component: Recent
+          component: Recent,
+          name: 'recent'
         },
         {
           path: '/detailActivity/:id',
