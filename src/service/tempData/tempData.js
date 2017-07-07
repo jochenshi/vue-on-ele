@@ -175,7 +175,7 @@ var certainGoActivity = {
     release_time: 1499237307822,
     lasting_time: '10.18-10.19',
     activity_place: '上海路商区',
-    gather_time: '',
+    gather_time: 1499391468283,
     gather_place: '上海路地铁站',
     jobs: ['singer'],
     price: '850',

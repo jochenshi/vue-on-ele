@@ -1,10 +1,36 @@
 /**
  * Created by Jincheng on 2017/7/3.
  */
-var formatTime, formatJobs, getDateDiff, getTimes, getContact
+var formatTime, fillZero, formatJobs, getDateDiff, getTimes, getContact
 
-formatTime = () => {
+formatTime = (format, date) => {
+  let tagArr = 'YYYY-MM-DD-hh-mm-ss'.split('-')
+  date = date ? new Date(date) : new Date()
+  format = format || 'YYYY年MM月DD日 hh:mm:ss'
+  let year = date.getFullYear()
+  let month = fillZero(date.getMonth() + 1)
+  let day = fillZero(date.getDate())
+  let hour = fillZero(date.getHours())
+  let minute = fillZero(date.getMinutes())
+  let second = fillZero(date.getSeconds())
+  let param = [year, month, day, hour, minute, second]
+  return param.reduce(function (accumate, val, index) {
+    return accumate.split(tagArr[index]).join(val)
+  }, format)
+}
 
+fillZero = (val) => {
+  var temp = Number(val), res
+  if (isNaN(temp)) {
+    throw Error('error: value type is not number')
+  } else {
+    if (temp < 10) {
+      res = '0' + temp
+    } else {
+      res = temp.toString()
+    }
+  }
+  return res
 }
 
 // 根据英文的职位转换为相应的中文的数组
@@ -86,4 +112,4 @@ getContact = (text) => {
   }
 }
 
-export {formatTime, formatJobs, getDateDiff, getTimes, getContact}
+export {formatTime, fillZero, formatJobs, getDateDiff, getTimes, getContact}

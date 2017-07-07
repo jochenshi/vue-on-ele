@@ -24,6 +24,7 @@ import MySetting from '../pages/setting/mySetting.vue'
 import Login from '../pages/login/login.vue'
 import Map from '../pages/map/map.vue'
 import ReviewActivity from '../pages/reviewActivity/reviewActivity.vue'
+import FinishedDetail from '../pages/finishedActivity/finishedDetail/finishedDetail.vue'
 
 Vue.use(Router)
 
@@ -64,6 +65,10 @@ const router = new Router({
               path: 'finished',
               component: FinishedActivity,
               name: 'finished'
+            },
+            {
+              path: 'finishedDetail/:id',
+              component: FinishedDetail
             },
             {
               path: 'personalInfo',

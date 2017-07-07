@@ -4,7 +4,7 @@
       <dl class="title">{{info.title}}</dl>
       <dl class="release-time">
         <span>发布时间：</span>
-        <span>2017-06-01 16:36:10</span>
+        <span>{{release_time}}</span>
       </dl>
       <div class="company">
         <span class="activity-sponsor">{{info.sponsor}}</span>
@@ -24,7 +24,7 @@
         <li>
           <i class="fa fa-clock-o"></i>
           <span class="label">集合时间</span>
-          <span>2017.01.01</span>
+          <span>{{gather_time}}</span>
         </li>
         <li>
           <i class="fa fa-map-marker"></i>
@@ -50,12 +50,14 @@
 </template>
 <script>
   import {getCertainActivity} from '../../../service/getData'
-  import {getContact} from '../../../service/publicActions/methods'
+  import {getContact, formatTime} from '../../../service/publicActions/methods'
   export default {
     data () {
       return {
         info: '',
-        contact: []
+        contact: [],
+        release_time: '',
+        gather_time: ''
       }
     },
     props: ['id'],
@@ -84,6 +86,8 @@
         getCertainActivity(id).then((val) => {
           this.info = val.data
           this.contact = val.data.contact
+          this.release_time = formatTime('YYYY-MM-DD hh:mm:ss', val.release_time)
+          this.gather_time = formatTime('YYYY-MM-DD hh:mm:ss', val.gather_time)
         })
       }
     }

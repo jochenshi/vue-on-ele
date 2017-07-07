@@ -23,7 +23,8 @@
     methods: {
       handleEvaluate (data) {
         console.log(data)
-        alert('you clicked' + data.id)
+        // alert('you clicked' + data.id)
+        this.$router.push({path: '/manage/finishedDetail/2'})
       }
     },
     components: {
