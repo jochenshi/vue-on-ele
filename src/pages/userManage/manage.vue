@@ -3,6 +3,7 @@
     <div class="manage-nav">
       <el-menu :router="true" :defaultActive="currentIndex">
         <el-menu-item index="/manage/personalInfo">个人资料</el-menu-item>
+        <el-menu-item index="/manage/account">我的账户</el-menu-item>
         <el-menu-item index="/manage/applying">我的报名</el-menu-item>
         <el-menu-item index="/manage/going">正在出活</el-menu-item>
         <el-menu-item index="/manage/finished">已完成出活</el-menu-item>
@@ -36,7 +37,12 @@
     },
     mounted () {
       var pa = this.$route.path.split('/')
-      this.currentIndex = pa[pa.length - 1]
+      let index = '/' + pa[1] + '/' + pa[2]
+      if (index === '/manage/finishedDetail') {
+        this.currentIndex = '/manage/finished'
+      } else {
+        this.currentIndex = index
+      }
       console.log(this.currentIndex)
     }
   }

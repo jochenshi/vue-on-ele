@@ -25,6 +25,7 @@ import Login from '../pages/login/login.vue'
 import Map from '../pages/map/map.vue'
 import ReviewActivity from '../pages/reviewActivity/reviewActivity.vue'
 import FinishedDetail from '../pages/finishedActivity/finishedDetail/finishedDetail.vue'
+import Account from '../pages/myAccount/account.vue'
 
 Vue.use(Router)
 
@@ -74,6 +75,10 @@ const router = new Router({
               path: 'personalInfo',
               component: PersonalInfo,
               name: 'personalInfo'
+            },
+            {
+              path: 'account',
+              component: Account
             },
             {
               path: 'myMessage',

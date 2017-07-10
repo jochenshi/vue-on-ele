@@ -188,4 +188,43 @@ var certainGoActivity = {
   mess: '获取成功'
 }
 
-export {applyingData, detailActivity, activities, identity, login, reviewActivity, certainGoActivity}
+var myMessage = {
+  data: {
+    data: [
+      {
+        id: 1,
+        message: '接收到的测试消息1:asdasdasdasdadasdasdasdasdasdasdas',
+        send_time: 1499237307822,
+        sender: 'system'
+      },
+      {
+        id: 2,
+        message: '接收到的测试消息2',
+        send_time: 1499237307822,
+        sender: 'system'
+      },
+      {
+        id: 3,
+        message: '接收到的测试消息3',
+        send_time: 1499237307822,
+        sender: 'system'
+      },
+      {
+        id: 4,
+        message: '接收到的测试消息4',
+        send_time: 1499237307822,
+        sender: 'system'
+      },
+      {
+        id: 5,
+        message: '接收到的测试消息5',
+        send_time: 1499237307822,
+        sender: 'system'
+      }
+    ],
+    total_number: 60
+  },
+  mess: '获取成功'
+}
+
+export {applyingData, detailActivity, activities, identity, login, reviewActivity, certainGoActivity, myMessage}

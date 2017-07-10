@@ -3,7 +3,7 @@
  */
 var formatTime, fillZero, formatJobs, getDateDiff, getTimes, getContact
 
-formatTime = (format, date) => {
+formatTime = (date, format) => {
   let tagArr = 'YYYY-MM-DD-hh-mm-ss'.split('-')
   date = date ? new Date(date) : new Date()
   format = format || 'YYYY年MM月DD日 hh:mm:ss'
