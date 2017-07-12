@@ -86,8 +86,8 @@
         getCertainActivity(id).then((val) => {
           this.info = val.data
           this.contact = val.data.contact
-          this.release_time = formatTime('YYYY-MM-DD hh:mm:ss', val.release_time)
-          this.gather_time = formatTime('YYYY-MM-DD hh:mm:ss', val.gather_time)
+          this.release_time = formatTime(val.data.release_time, 'YYYY-MM-DD hh:mm:ss')
+          this.gather_time = formatTime(val.data.gather_time, 'YYYY-MM-DD hh:mm:ss')
         })
       }
     }

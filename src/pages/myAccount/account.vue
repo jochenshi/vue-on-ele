@@ -1,5 +1,8 @@
 <template>
-  <div>account page</div>
+  <div>
+    <div>top</div>
+    <div>bottom</div>
+  </div>
 </template>
 <script>
   export default {
