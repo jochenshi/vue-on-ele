@@ -39,7 +39,7 @@
   </div>
 </template>
 <script>
-  import {login} from '../../service/getData'
+  import {login, register} from '../../service/getData'
   export default {
     data () {
       return {
@@ -94,6 +94,7 @@
         this.$refs['registForm'].validate((valid) => {
           if (valid) {
             console.log(this.registForm)
+            register(this.registForm).then((res) => {})
           } else {
             return false
           }
