@@ -118,6 +118,8 @@
       getInfo () {
         getInfo().then((data) => {
           this.infoForm = data
+        }, (res) => {
+          console.log(res)
         })
       }
     },
