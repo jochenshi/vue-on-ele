@@ -50,7 +50,7 @@
   </div>
 </template>
 <script>
-  import {getUser, getActivity} from '../../service/getData'
+  import {getActivity} from '../../service/getData'
   import {formatJobs, getDateDiff} from '../../service/publicActions/methods'
   import detailActivity from '../../components/detailActivity/detailActivity.vue'
   export default {
@@ -89,7 +89,7 @@
       }
     },
     mounted () {
-      getUser()
+      // getUser()
       this.getActivities()
       console.log(this.$store.state)
     },
