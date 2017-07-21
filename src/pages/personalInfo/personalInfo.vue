@@ -117,8 +117,18 @@
       },
       getInfo () {
         getInfo().then((data) => {
-          this.infoForm = data
+          console.log(data)
+          var _this = this
+          var temp = data.data[0]
+          var index = ['nickname', 'sex', 'birth', 'height', 'phone', 'mail', 'description']
+          index.forEach(function (val) {
+            if (temp[val]) {
+              val === 'phone' ? _this.infoForm[val] = Number(temp[val]) : _this.infoForm[val] = temp[val]
+            }
+          })
+          // this.infoForm = data.data[0]
         }, (res) => {
+          this.$store.dispatch('handleError', 'asdasdasd')
           console.log(res)
         })
       }

@@ -3,6 +3,7 @@
  */
 import * as types from './mutation-types'
 import {getIdentity} from '../service/getData'
+import {MessageBox} from 'element-ui'
 
 export default {
   recordIdentity ({commit}) {
@@ -15,6 +16,12 @@ export default {
     return new Promise((resolve, reject) => {
       commit(types.RECORD_IDENTITY, data)
       resolve()
+    })
+  },
+  handleError (data, d) {
+    console.log(d)
+    MessageBox('登录已超时，请重新登录', '提示').then(() => {
+      window.location.hash = '/login'
     })
   }
 }

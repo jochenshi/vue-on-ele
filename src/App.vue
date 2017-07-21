@@ -75,7 +75,14 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .app-nav-title + div {
+    margin-top: 70px;
+  }
   .app-nav-title{
+    width: 100%;
     background-color: #eef1f6;
+    position: fixed;
+    top: 0;
+    z-index: 2;
   }
 </style>

@@ -26,6 +26,7 @@ import Map from '../pages/map/map.vue'
 import ReviewActivity from '../pages/reviewActivity/reviewActivity.vue'
 import FinishedDetail from '../pages/finishedActivity/finishedDetail/finishedDetail.vue'
 import Account from '../pages/myAccount/account.vue'
+import CreateActivity from '../pages/createActivity/createActivity.vue'
 
 Vue.use(Router)
 
@@ -122,7 +123,7 @@ const router = new Router({
         },
         {
           path: '/add',
-          component: Map
+          component: CreateActivity
         },
         {
           path: '/map',
