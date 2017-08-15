@@ -80,11 +80,14 @@
           if (valid) {
             console.log(this.loginForm)
             login(this.loginForm).then((data) => {
+              console.log(data)
               this.$router.push('/home')
 //              this.$store.dispatch('loginRecord', data).then(() => {
 //                console.log(11111)
 //                this.$router.push('/home')
 //              })
+            }, (err) => {
+              console.log(err)
             })
           } else {
             return false

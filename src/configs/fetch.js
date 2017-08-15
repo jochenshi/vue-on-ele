@@ -45,7 +45,7 @@ export default (type = 'GET', url = '', data = {}) => {
             resolve(obj)
           }, 5000)
         } else {
-          console.log(requestObj.status)
+          // console.log(requestObj.status)
           reject(requestObj.response)
         }
       }

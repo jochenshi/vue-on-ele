@@ -35,6 +35,8 @@ if (!isLocal) {
   getGoingActivity = () => setPromise(localData.applyingData)
 
   getFinishedActivity = () => setPromise(localData.applyingData)
+
+  getUser = () => fetch('GET', '/v1/user/', {})
 } else {
   getProduct = () => fetch('GET', '', {})
 

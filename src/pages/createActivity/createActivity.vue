@@ -37,7 +37,9 @@
 <script>
   export default {
     data () {
-      return {}
+      return {
+        len: 1
+      }
     }
   }
 </script>
